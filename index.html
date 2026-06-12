@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Xếp Hạng Cao Thủ Dự Đoán World Cup 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght=500;700&family=Plus+Jakarta+Sans:wght=400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.65), rgba(7, 11, 25, 0.85)), 
+                              url('https://cdn-media.sforum.vn/storage/app/media/nhuy/hinh-nen-world-cup-2026-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #070b19;
+        }
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+        .text-glow-gold {
+            text-shadow: 0 0 12px rgba(245, 158, 11, 0.7), 0 0 25px rgba(245, 158, 11, 0.4);
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.45), inset 0 0 15px rgba(245, 158, 11, 0.2);
+        }
+        
+        /* HIỆU ỨNG LÓE SÁNG RỰC RỠ CHO TOP 1 */
+        @keyframes brilliantGlow {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(245, 158, 11, 0.6), 0 0 40px rgba(245, 158, 11, 0.3), inset 0 0 15px rgba(245, 158, 11, 0.3);
+                border-color: rgba(245, 158, 11, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(251, 191, 36, 1), 0 0 80px rgba(239, 68, 68, 0.5), inset 0 0 25px rgba(251, 191, 36, 0.5);
+                border-color: rgba(251, 191, 36, 1);
+            }
+        }
+        .glow-gold-brilliant {
+            animation: brilliantGlow 2s infinite ease-in-out;
+        }
+
+        /* HIỆU ỨNG TIA SÁNG QUÉT NGANG */
+        @keyframes lightShine {
+            0% { left: -150%; }
+            30%, 100% { left: 150%; }
+        }
+        .top1-shimmer {
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0) 30%,
+                rgba(255, 215, 0, 0.2) 40%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 215, 0, 0.2) 60%,
+                transparent 70%
+            );
+            transform: skewX(-25deg);
+            animation: lightShine 3.5s infinite ease-in-out;
+        }
+
+        .glow-silver {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+        }
+        .glow-bronze {
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.25);
+        }
+        .glow-fire {
+            box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ef4444;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-5xl mx-auto">
+        
+        <header class="text-center mb-10 relative">
+            <div class="inline-flex items-center justify-center gap-4 mb-3 group relative">
+                <i class="fa-solid fa-bolt text-3xl sm:text-4xl text-orange-500 animate-bounce"></i>
+                <i class="fa-solid fa-soccer-ball text-4xl sm:text-5xl text-amber-400 text-glow-gold animate-spin" style="animation-duration: 8s;"></i>
+                <i class="fa-solid fa-bolt text-3xl sm:text-4xl text-red-500 animate-bounce"></i>
+            </div>
+            <h1 class="font-oswald text-3xl sm:text-5xl lg:text-6xl font-bold tracking-wider text-amber-400 text-glow-gold uppercase italic">
+                Bảng Xếp Hạng Cao Thủ Dự Đoán World Cup 2026 carlisle homes
+            </h1>
+            <p class="text-yellow-400 font-bold uppercase tracking-widest text-xs sm:text-sm mt-3 flex items-center justify-center gap-2 bg-black/40 px-4 py-1 rounded-full inline-block mx-auto">
+                <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                thần rùa tương trợ - Vòng Bảng
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center mb-8 bg-slate-900/80 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-xl">
+            <div class="sm:col-span-12 relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="searchKeyword" oninput="filterPlayers()" placeholder="Tìm kiếm tên cao thủ dự đoán..." 
+                       class="w-full bg-slate-950/80 border border-slate-700 focus:border-yellow-400 rounded-lg pl-11 pr-4 py-2.5 text-sm text-slate-100 outline-none transition-all">
+            </div>
+        </div>
+
+        <section id="podiumContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end mb-14 px-4 sm:px-12 md:px-0">
+            </section>
+
+        <section class="bg-slate-900/80 backdrop-blur-lg rounded-2xl border border-slate-700 shadow-2xl mb-8 overflow-hidden">
+            <div class="grid grid-cols-12 gap-2 sm:gap-4 px-6 py-4 bg-slate-950/90 border-b border-slate-800 font-oswald uppercase tracking-wider text-xs sm:text-sm text-slate-300 font-bold">
+                <div class="col-span-2 text-center">Hạng</div>
+                <div class="col-span-6 sm:col-span-6">Tên Cao Thủ</div>
+                <div class="col-span-2 text-center hidden sm:block">Số Trận Đúng</div>
+                <div class="col-span-4 sm:col-span-2 text-center">Tổng Điểm Số</div>
+            </div>
+            <div id="rankingList" class="divide-y divide-slate-800 max-h-[480px] overflow-y-auto">
+                </div>
+        </section>
+
+        <footer class="text-center space-y-4 relative z-10">
+            <div class="inline-block bg-gradient-to-r from-red-600 to-amber-500 p-[2px] rounded-xl shadow-lg glow-fire animate-pulse">
+                <div class="bg-[#070b19] px-6 py-3 rounded-xl">
+                    <p class="font-oswald text-sm sm:text-base tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-400 to-red-500 font-bold uppercase italic">
+                        ⚡ ĐƯỜNG ĐUA CÒN DÀI - VÀO KÈO NGAY ĐỂ LẬT ĐỔ NGÔI VƯƠNG! ⚡
+                        <br> Lượt 1 các trận từ 12 - 18/6 thời gian bình chọn: từ 05/6 đến 10/6 (chốt deadline: 3h chiều)
+ 
+<br> Lượt 2 các trận từ 19 - 24/6 thời gian bình chọn: từ 17-18/6 (chốt deadline: 3h chiều)
+ 
+<br> Lượt 3 các trận 25 - 28/6 thời gian bình chọn: từ 23-24/6 (chốt deadline: 3h chiều)
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+<script>
+    let players = [];
+    let currentSearchKeyword = "";
+
+    const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQOu74BZum8hv_WCNc2lCqbSmV-YXWkwWTrQZ4LmAZgY8Tjj6d9DEA1h6P9E8_4qXWisZy9-atqMeUP/pub?gid=0&single=true&output=csv";
+
+    async function fetchPlayersData() {
+        try {
+            const response = await fetch(GOOGLE_SHEET_CSV_URL);
+            const csvText = await response.text();
+            players = parseCSV(csvText);
+            renderLeaderboard();
+        } catch (error) {
+            console.error("Lỗi khi tải dữ liệu từ Google Sheets:", error);
+            document.getElementById('rankingList').innerHTML = `<div class="text-center py-10 text-red-400 italic">Đang gặp lỗi kết nối với Google Sheets công khai. Vui lòng kiểm tra lại cấu hình chia sẻ!</div>`;
+        }
+    }
+
+    function parseCSV(csvText) {
+        const lines = csvText.split('\n');
+        const result = [];
+        
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (!line) continue;
+
+            const cols = line.split(/[,;]/);
+            
+            if (cols.length >= 6) {
+                result.push({
+                    id: parseInt(cols[0]),
+                    name: cols[1].replace(/"/g, '').trim(),
+                    matches: parseInt(cols[2]) || 0,
+                    score: parseInt(cols[3]) || 0,
+                    seed: cols[4].replace(/"/g, '').trim(),
+                    bg: cols[5].replace(/"/g, '').trim()
+                });
+            }
+        }
+        return result;
+    }
+
+    function initData() {
+        fetchPlayersData();
+        setInterval(fetchPlayersData, 300000);
+    }
+
+    function renderLeaderboard() {
+        let sortedPlayers = [...players];
+        sortedPlayers.sort((a, b) => b.score - a.score);
+        
+        let rankedData = sortedPlayers.map((p, idx) => ({ ...p, actualRank: idx + 1 }));
+
+        if (currentSearchKeyword !== "") {
+            rankedData = rankedData.filter(p => p.name.toLowerCase().includes(currentSearchKeyword.toLowerCase()));
+        }
+
+        const top3 = rankedData.filter(p => p.actualRank <= 3);
+        const individualList = rankedData.filter(p => p.actualRank > 3);
+
+        renderPodium(top3);
+        renderTableRows(individualList, rankedData.length === 0);
+    }
+
+    function getChibiAvatarUrl(seed, bg) {
+        return `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${seed}&backgroundColor=${bg}`;
+    }
+
+    function renderPodium(top3Data) {
+        const podiumContainer = document.getElementById('podiumContainer');
+        podiumContainer.innerHTML = '';
+
+        if(top3Data.length === 0) return;
+
+        let displayOrder = [];
+        const rank1 = top3Data.find(p => p.actualRank === 1);
+        const rank2 = top3Data.find(p => p.actualRank === 2);
+        const rank3 = top3Data.find(p => p.actualRank === 3);
+
+        if (window.innerWidth >= 768) {
+            if (rank2) displayOrder.push(rank2);
+            if (rank1) displayOrder.push(rank1);
+            if (rank3) displayOrder.push(rank3);
+        } else {
+            if (rank1) displayOrder.push(rank1);
+            if (rank2) displayOrder.push(rank2);
+            if (rank3) displayOrder.push(rank3);
+        }
+
+        displayOrder.forEach(player => {
+            let cardStyle = "";
+            let badgeStyle = "";
+            let rankLabel = "";
+            let shimmerLayer = ""; // Lớp quét sáng cho Top 1
+            
+            if(player.actualRank === 1) {
+                // Thay đổi từ 'glow-gold' sang 'glow-gold-brilliant' để có hiệu ứng lóe sáng mạnh mẽ hơn
+                cardStyle = "bg-gradient-to-b from-amber-950/80 to-slate-950/95 border-amber-400 glow-gold-brilliant scale-105 md:scale-110 z-10 p-8";
+                badgeStyle = "from-amber-500 to-yellow-400 text-slate-950";
+                rankLabel = `<i class="fa-solid fa-crown text-base animate-pulse"></i> Top 1 Vinh Danh`;
+                // Thêm lớp bọc overflow để cắt tia sáng lọt ra ngoài bo góc của card
+                shimmerLayer = `<div class="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-0"><div class="top1-shimmer"></div></div>`;
+            } else if (player.actualRank === 2) {
+                cardStyle = "bg-slate-950/90 border-slate-400 glow-silver p-6";
+                badgeStyle = "bg-slate-400 text-slate-950";
+                rankLabel = `<i class="fa-solid fa-medal mr-1"></i> Top 2 Cao Thủ`;
+            } else {
+                cardStyle = "bg-slate-950/90 border-amber-700 glow-bronze p-6";
+                badgeStyle = "bg-amber-700 text-white";
+                rankLabel = `<i class="fa-solid fa-medal mr-1"></i> Top 3 Bám Đuổi`;
+            }
+
+            const div = document.createElement('div');
+            div.className = `backdrop-blur-md border-2 rounded-2xl text-center transform hover:-translate-y-2 transition-all duration-300 relative group ${cardStyle}`;
+            div.innerHTML = `
+                ${shimmerLayer}
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 font-bold px-4 py-1 rounded-full text-xs font-oswald uppercase tracking-wider shadow-lg bg-gradient-to-r ${badgeStyle} z-10">
+                    ${rankLabel}
+                </div>
+                <div class="relative inline-block mb-4 mt-2 z-10">
+                    <div class="w-20 h-20 mx-auto rounded-2xl overflow-hidden shadow-lg border border-slate-700 bg-slate-900 flex items-center justify-center">
+                        <img src="${getChibiAvatarUrl(player.seed, player.bg)}" alt="${player.name}" class="w-full h-full object-cover">
+                    </div>
+                    <span class="absolute bottom-0 right-0 ${badgeStyle.split(' ')[0]} text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center border border-slate-950 shadow z-10">${player.actualRank}</span>
+                </div>
+                <h3 class="font-bold text-lg text-slate-100 truncate group-hover:text-yellow-400 transition-colors z-10 relative">${player.name}</h3>
+                <p class="text-slate-300 text-xs mb-3 font-semibold z-10 relative">${player.matches} trận đúng</p>
+                <div class="inline-block bg-slate-900/90 px-4 py-1.5 rounded-xl border border-slate-700 shadow-inner z-10 relative">
+                    <span class="font-oswald text-xl font-bold text-yellow-400 tracking-wide">${player.score.toLocaleString()} <span class="text-xs text-slate-300 font-sans">Điểm</span></span>
+                </div>
+            `;
+            podiumContainer.appendChild(div);
+        });
+    }
+
+    function renderTableRows(listData, isEmpty) {
+        const rankingList = document.getElementById('rankingList');
+        rankingList.innerHTML = '';
+
+        if (isEmpty) {
+            rankingList.innerHTML = `<div class="text-center py-10 text-slate-400 italic">Không tìm thấy thành viên nào khớp dữ liệu...</div>`;
+            return;
+        }
+
+        listData.forEach(player => {
+            const div = document.createElement('div');
+            div.className = "grid grid-cols-12 gap-2 sm:gap-4 px-6 py-4 items-center bg-slate-900/50 hover:bg-yellow-400/10 transition-all duration-200 group";
+            div.innerHTML = `
+                <div class="col-span-2 text-center font-oswald font-bold text-lg text-slate-400">${player.actualRank < 10 ? '0' + player.actualRank : player.actualRank}</div>
+                <div class="col-span-6 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl border border-slate-700 overflow-hidden hidden sm:flex flex-shrink-0 bg-slate-900 shadow">
+                        <img src="${getChibiAvatarUrl(player.seed, player.bg)}" alt="${player.name}" class="w-full h-full object-cover">
+                    </div>
+                    <span class="font-semibold truncate text-slate-100 group-hover:text-yellow-400 transition-colors">${player.name}</span>
+                </div>
+                <div class="col-span-2 text-center font-semibold text-slate-200 hidden sm:block">${player.matches}</div>
+                <div class="col-span-4 sm:col-span-2 text-right font-oswald font-bold text-base text-yellow-400 tracking-wide pr-2">${player.score.toLocaleString()} Điểm</div>
+            `;
+            rankingList.appendChild(div);
+        });
+    }
+
+    function filterPlayers() {
+        currentSearchKeyword = document.getElementById('searchKeyword').value.trim();
+        renderLeaderboard();
+    }
+
+    initData();
+    window.addEventListener('resize', renderLeaderboard);
+</script>
+</body>
+</html>
